@@ -7,7 +7,7 @@
     "GITHUB_DESCRIPTION.txt": "47a6d6f3c1df4958fc32c63e1b6236c2a5c36288269b739bc89a13bfda08ffe3",
     "HACKER_NEWS.txt": "ab8b06b0d272cd9c7442e90033b78315b66d84693dcb67f09e8547706bef9573",
     "HEADLINE_NOTES.md": "51f8526a9e36d5b7dccb9ee46ae74f3026cdad15ac741bda42deff32ada01ea9",
-    "INTEGRITY.md": "0dc175d82537728c878c2cca2c1d1205531a249993812170094a71449395a1d1",
+    "INTEGRITY.md": "562c3afae35d23902be64f0ee5f7d32c12962c1dc23fcc3fe70f5c87a2b5254c",
     "LICENSE": "07674dfa9960dff5128d0cdcce58fee7543c26ff47e58e07ae6ac0254a0f58b1",
     "LIMITS.md": "cc83d33836359c8f38794549c3c7cffbb75c574b9b2f1d55e056c177d6a48803",
     "METHODOLOGY.md": "b8ef3ed0fd16a4ae9f0ebec22042b5694393f5f07972a1319aedae63f7d462cd",
@@ -64,7 +64,7 @@
   },
   "release": "openline-kill-switch publication candidate",
   "runtime": "Python 3.12.3 (stdlib only)",
-  "sha256sums_sha256": "e5625ebe82bd16f3d38d6c4aa56178fc86c99d6f4c1eab76420f4d6a708146e4",
+  "sha256sums_sha256": "7dabca0c86585f22c7a06e236cc1dbc3a08b13b78ae581d005117675e4cf2285",
   "source_commit": "4ca2471",
   "study": "KILL-SWITCH-REFERENCE-001",
   "terminal": "PASS_KILL_SWITCH_REFERENCE_001_COVERED_CONSEQUENCES_STOPPED"

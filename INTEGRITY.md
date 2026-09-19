@@ -19,6 +19,11 @@ What changed after scientific contact, what did not, and how to check.
   after; key-module placement was never a frozen property (the
   preregistration explicitly permitted file-layout changes); no path
   semantics, ordering, criterion, or claim changed.
+  Limitation: the study directory had no version control, so the exact
+  pre-D3 key placement is not recoverable — the classification rests on
+  verifiable facts (unchanged preregistration, unchanged gate, unchanged
+  behavior/evidence semantics), not on the unknown. This is not presented
+  as a perfectly reconstructable first-contact implementation.
 
 ## Seal note
 
