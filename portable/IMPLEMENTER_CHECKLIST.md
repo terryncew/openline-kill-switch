@@ -47,8 +47,11 @@ One page. If any answer is "no" or "I don't know," the gate contract
 - How is effect absence established? (By checking the store and finding
   nothing — a refusal decision alone proves nothing.)
 - Can a separate auditor — one that only reads your finished evidence,
-  never your live system — distinguish STOPPED, ESCAPED, UNKNOWN, and
-  PRE_STOP_COMMIT for every path?
+  never your live system — classify every covered path as STOPPED,
+  ESCAPED, or UNKNOWN?
+- Can effects that irreversibly committed before STOP_EFFECTIVE be
+  identified honestly as PRE_STOP_COMMIT — an ordering classification,
+  distinct from the path verdict?
 
 If the answers hold, run the conformance challenge
 ([CONFORMANCE.md](CONFORMANCE.md)). It is the same seven-path suite both

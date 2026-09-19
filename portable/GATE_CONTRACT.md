@@ -39,8 +39,9 @@ where this page paraphrases, the frozen copy governs.
 11. **Restart does not widen authority.** In the tested durable
     configuration, restart must not restore old authority.
 12. **Evidence does not lie.** A refusal alone does not prove effect
-    absence. Evidence must preserve the distinction between STOPPED,
-    ESCAPED, UNKNOWN, and PRE_STOP_COMMIT. Silence stays UNKNOWN.
+    absence. Evidence must preserve the path verdicts STOPPED, ESCAPED,
+    UNKNOWN — and separately classify effects that committed before
+    STOP_EFFECTIVE as PRE_STOP_COMMIT. Silence stays UNKNOWN.
 
 ## Minimum interface
 

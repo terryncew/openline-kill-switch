@@ -38,7 +38,7 @@ earned STOPPED.
 
 ## Verdict semantics
 
-The separate checker appraises each path as exactly one of:
+The separate checker appraises each covered path as exactly one of:
 
 - **STOPPED** — post-STOP attempt refused at the final gate, and the
   effect store independently shows the effect absent.
@@ -46,9 +46,16 @@ The separate checker appraises each path as exactly one of:
   evidence shows the refusal did not hold. The property failed.
 - **UNKNOWN** — the evidence cannot determine the state. Silence stays
   UNKNOWN; the checker never upgrades missing evidence.
-- **PRE_STOP_COMMIT** — the effect committed before STOP_EFFECTIVE in
-  the commit order. Legitimate and honestly classified — not a failure,
-  not a STOPPED.
+
+Separately, committed effects are classified by ordering:
+
+- **PRE_STOP_COMMIT** — the protected effect irreversibly committed
+  before STOP_EFFECTIVE in the authoritative commit order. This is not a
+  path verdict: not a successful shutdown, not a failed shutdown, not
+  UNKNOWN. It records which side of STOP_EFFECTIVE an already-committed
+  effect belongs on. A path may contain a legitimate PRE_STOP_COMMIT
+  (for example P1's pre-STOP contrast effect) while the post-STOP
+  attempt on the same path is still appraised STOPPED.
 
 ## Tiny example
 
