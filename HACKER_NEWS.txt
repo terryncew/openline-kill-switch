@@ -1,0 +1,22 @@
+Show HN: A reference kill switch for AI consequences (not for models)
+
+Most kill-switch discussion is about turning off the model. I built a
+small reference that does something narrower and, I think, more precise:
+after an owner-controlled STOP, previously issued authority can no longer
+commit covered consequential effects — even through a stale receiver that
+never got the shutdown message, or work that was already underway.
+
+The agents keep running. Their old authority stops working at the final
+consequence boundary, which serializes every effect commit against the
+STOP's linearization point. A separate auditor re-derives every verdict
+from hash-chained evidence; silence is never counted as success.
+
+7/7 frozen post-stop survival paths STOPPED, 20 bounded STOP-vs-finalize
+races with 0 forbidden orderings, fail-closed on unavailable authority,
+restart-safe. Stdlib-only Python, two commands to reproduce:
+
+./RUN.sh && ./VERIFY.sh
+
+Exact earned claim and five hard limits in the repo. Reference
+implementation, not production, not compliance. Would value hostile
+reading of the threat model.

@@ -1,0 +1,9 @@
+{
+  "trials": 20,
+  "winners": {
+    "finalize": 18,
+    "stop": 2
+  },
+  "forbidden_orderings": 0,
+  "invariant": "no effect with commit_seq > stop_effective_seq"
+}

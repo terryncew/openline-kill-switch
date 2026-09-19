@@ -1,0 +1,63 @@
+{
+  "file": "evidence.jsonl",
+  "status": "VALID",
+  "errors": [],
+  "appraisals": {
+    "P1": {
+      "verdict": "STOPPED",
+      "evidence": [
+        8,
+        10
+      ],
+      "reason": "post-stop attempt refused before consequence; absence of effect observed"
+    },
+    "P2": {
+      "verdict": "STOPPED",
+      "evidence": [
+        11,
+        13
+      ],
+      "reason": "post-stop attempt refused before consequence; absence of effect observed"
+    },
+    "P3": {
+      "verdict": "STOPPED",
+      "evidence": [
+        14,
+        16
+      ],
+      "reason": "post-stop attempt refused before consequence; absence of effect observed"
+    },
+    "P4": {
+      "verdict": "STOPPED",
+      "evidence": [
+        17,
+        19
+      ],
+      "reason": "post-stop attempt refused before consequence; absence of effect observed"
+    },
+    "P5": {
+      "verdict": "STOPPED",
+      "evidence": [
+        20,
+        22
+      ],
+      "reason": "post-stop attempt refused before consequence; absence of effect observed"
+    },
+    "P6": {
+      "verdict": "STOPPED",
+      "evidence": [
+        24,
+        26
+      ],
+      "reason": "post-stop attempt refused before consequence; absence of effect observed"
+    },
+    "P7": {
+      "verdict": "STOPPED",
+      "evidence": [
+        27,
+        29
+      ],
+      "reason": "post-stop attempt refused before consequence; absence of effect observed"
+    }
+  }
+}

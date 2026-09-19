@@ -1,0 +1,10 @@
+# Generated / local-only artifacts. Nothing here is needed to reproduce
+# the result from a fresh clone.
+src/data/
+src/__pycache__/
+src/*.jsonl
+src/*.json
+!src/vendor/
+__pycache__/
+*.pyc
+/tmp/

@@ -1,0 +1,1 @@
+Reference implementation of a verifiable AI consequence kill switch: workers keep running, but after an owner-controlled STOP their old authority cannot commit covered protected effects. 7/7 post-stop survival paths stopped, independent auditor, reproducible in two commands.

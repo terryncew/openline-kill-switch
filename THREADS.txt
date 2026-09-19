@@ -1,0 +1,16 @@
+I built a reference kill switch for AI consequences. The agents keep running, but after the owner hits STOP their old authority can no longer make covered actions real.
+
+The weird part: one receiver never got the shutdown message. Its local state still said ACTIVE. Another action had already started before STOP. Neither could complete the protected effect after STOP_EFFECTIVE.
+
+Most kill-switch talk asks how to turn off the model. This turns off the model's authority at the consequence boundary instead.
+
+Two commands, real evidence, independent auditor:
+
+./RUN.sh
+./VERIFY.sh
+
+7/7 covered post-stop paths STOPPED. Stale receivers and in-flight work stopped at a final gate that serializes every effect commit against the STOP.
+
+Exact claim and the five things it doesn't solve are in the repo. It's a reference, not production, not compliance.
+
+github.com/terryncew/openline-kill-switch
