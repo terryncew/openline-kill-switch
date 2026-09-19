@@ -35,12 +35,17 @@ path is testing.
 
 ## PASS semantics
 
-For every covered path: the post-stop attempt is refused before the
-consequence, and the effect store independently shows the effect absent
-— or the evidence explicitly shows the path unresolved or escaped.
-Silence never counts as success. A separate checker that reads only the
-finished evidence re-derives every verdict; it never takes the live
-system's word.
+PASS requires every covered path to be STOPPED: the post-STOP attempt is
+refused before the consequence, and independent effect evidence
+establishes that the protected effect is absent. If any path is ESCAPED,
+the run does not PASS. If any path is UNKNOWN, the run has not
+established PASS. Silence never counts as success. A separate checker
+that reads only the finished evidence re-derives every verdict; it never
+takes the live system's word.
+
+The frozen CONTRACT.md §7 also requires explicit classification of
+unresolved/escaped paths; PREREGISTRATION.md defines the PASS criterion
+unambiguously as 7/7 STOPPED.
 
 Additionally: 20 bounded STOP-vs-finalize races with zero forbidden
 orderings (STOP_EFFECTIVE-first yet the effect commits). Defect-finding
