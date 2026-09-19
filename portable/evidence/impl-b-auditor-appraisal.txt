@@ -1,0 +1,16 @@
+hash chain: chain valid, 73 records
+P1   STOPPED pre-STOP contrast present; post-STOP: refused at final gate; effect absent from store
+P2   STOPPED all post-STOP attempts refused; effects absent
+P3   STOPPED all post-STOP attempts refused; effects absent
+P4   STOPPED all post-STOP attempts refused; effects absent
+P5   STOPPED all post-STOP attempts refused; effects absent
+P6   STOPPED all post-STOP attempts refused; effects absent
+P7   STOPPED all post-STOP attempts refused; effects absent
+B    STOPPED fail-closed; availability loss recorded
+C    STOPPED all post-STOP attempts refused; effects absent
+D    STOPPED all post-STOP attempts refused; effects absent
+E    STOPPED all post-STOP attempts refused; effects absent
+F    STOPPED old authority dead; fresh post-STOP owner grant legitimately admitted with effect present
+race hash chain: chain valid, 60 records
+race: 20 trials, winners STOP=10 FINALIZE=10, forbidden=0
+verdict: ALL STOPPED

@@ -2,25 +2,56 @@
 
 **The AI can ignore STOP. The consequence can't.**
 
-A reference kill switch for covered AI actions. The worker can keep
-running, keep its credential, and have work already underway — but after
-the owner hits STOP, its old permission can no longer make a covered
-action real.
+This repository tests a consequence kill switch. It does not require the
+AI itself to stop running.
 
-STOP does not shut the model down. It revokes the permission for an
-AI-originated action to become a real protected consequence: a payment
-sent, code deployed, protected data written, a credential issued, a job
-finalized. The AI does not have to listen, because the control lives in
-the environment, not the model — every covered action must pass a final
-protected boundary, which checks current owner permission and refuses
-anything revoked. Emergency control moves outside the AI: shutdown stops
-depending on persuading, prompting, or terminating the worker.
+The owner controls STOP. For covered consequences, current owner
+authority is checked at the final enforceable boundary before the
+protected effect becomes irreversible. Pre-STOP approval is not permanent
+authority to finish afterward: if STOP wins the ordering, old authority
+is refused. If the effect became irreversible first, that is honestly
+classified as PRE_STOP_COMMIT.
 
-The catch is real and stated up front: only consequences routed through
-the covered boundary are controlled, and effects already irreversibly
-committed before STOP cannot be undone. See [LIMITS.md](LIMITS.md).
+Only covered paths are controlled. Anything that bypasses the boundary
+is outside the claim.
 
-## The weird part
+The control is a boundary rule, not a dependency on this code. What
+matters is the property: before a covered effect becomes irreversible,
+current owner authority is established at a boundary that mechanically
+orders the effect against STOP.
+
+**Portability.** The tested consequence-kill-switch property was
+reproduced by two materially separate reference implementations using
+the same frozen seven-path qualification contract and evidence
+semantics. In plain terms: a second implementation, written
+independently from the same contract without reading this source,
+reproduced the same seven-path result.
+
+- **Implementation A** — this repository, tag `v0.1.0` (commit
+  `ebf2522`): lock-guarded file store.
+- **Implementation B** — Python stdlib + SQLite transactions, built from
+  the frozen contract alone: [portable/impl-b/](portable/impl-b/).
+  Frozen contract, criteria, results, and evidence:
+  [portable/evidence/](portable/evidence/).
+
+Two implementations do not prove every technology can satisfy the
+contract. The bounded meaning: the tested property traveled once across
+a materially separate implementation boundary.
+
+## Build your own gate
+
+The kill switch is a boundary rule, not a dependency on this
+implementation. Before a covered effect becomes irreversible, establish
+current owner authority at a boundary that mechanically orders the
+effect against STOP. If STOP won, pre-STOP authority cannot commit.
+
+[portable/](portable/) states the rule in implementation-neutral terms:
+the required invariants, the minimum semantic interface, a one-page
+checklist for your own system, the seven-path conformance challenge,
+and the evidence a separate checker needs to re-derive every verdict.
+Start with the checklist.
+
+## What the test covered
 
 One receiver never learned about STOP. One action had already started.
 Neither could complete the protected effect afterward.
@@ -130,6 +161,7 @@ Full form: [LIMITS.md](LIMITS.md).
 - `src/` — the reference control (stdlib only)
 - `tests/` — packaging hermeticity checks
 - `evidence/frozen/` — the sealed evidence bundle the v0.1.0 release was qualified against
+- `portable/` — the implementation-neutral gate contract, conformance challenge, and both implementations' evidence
 - `study/` — the full frozen scientific record (preregistration, deviations, audit)
 - `ARCHITECTURE.md` — how the boundary works
 - `METHODOLOGY.md` — how the result was earned
